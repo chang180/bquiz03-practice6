@@ -23,9 +23,6 @@ foreach($rows as $row){
     </tr>
 <?php } ?>
 </table>
-<<<<<<< HEAD
-<button>修改確定</button><button type="reset">重置</button>
-=======
 請輸入動畫效果：(1.淡入2.縮放3.滑出) <input type="number" name="ani" value="<?=$_SESSION['ani'];?>"><br>
 <button>編輯確定</button><button type="reset">重置</button>
 </form>
@@ -33,5 +30,4 @@ foreach($rows as $row){
 <h1 class="ct">新增預告片海報</h1>
 預告片海報：<input type="file" name="img">預告片片名：<input type="text" name="name"><br>
 <div class="ct"><button>新增</button><button type="reset">重置</button></div>
->>>>>>> 2103c26add289a483796ca5b8be5ae830d815bcf
 </form>
