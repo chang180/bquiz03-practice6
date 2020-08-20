@@ -4,7 +4,7 @@ date_default_timezone_set("Asia/Taipei");
 
 class DB
 {
-    private $dsn = "mysql:host=localhsot;dbname=db03;charset=utf8";
+    private $dsn = "mysql:host=localhost;dbname=db03;charset=utf8";
     private $root = "root";
     private $password = "";
     public function __construct($table)
@@ -60,7 +60,7 @@ class DB
         if (isset($arg['id'])) {
             foreach ($arg as $k => $v) $tmp[] = "`$k`='$v'";
             $sql = sprintf("UPDATE %s SET %s WHERE `id`='%s'", $this->table, implode(",", $tmp), $arg['id']);
-        } else $sql = sprintf("INSERT INTO %s (`%s`)VALUES('%s)", $this->table, implode("`,`", array_keys($arg)), implode("','", $arg));
+        } else $sql = sprintf("INSERT INTO %s (`%s`)VALUES('%s')", $this->table, implode("`,`", array_keys($arg)), implode("','", $arg));
         return $this->pdo->exec($sql);
     }
 }
@@ -69,6 +69,9 @@ function to($url)
     header("location:$url");
 }
 
+if(empty($_SESSION['ani'])) $_SESSION['ani']=1;
+
+$Movie=new DB('movie');
 $Poster=new DB('poster');
 $Ord=new DB('ord');
-$Movie=new DB('movie');
+
