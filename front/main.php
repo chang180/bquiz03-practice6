@@ -45,7 +45,7 @@
               <div>上映日期：<br><?= $m['date']; ?></div>
             </div>
           </div>
-          <a href="?do=intro&id=<?= $m['id']; ?>"><button>劇情簡介</button></a><a href="?do=order&id=<?= $m['id']; ?>"><button>線上訂票</button></a> </div>
+          <a href="?do=intro&id=<?= $m['id']; ?>"><button>劇情簡介</button></a><a href="?do=order&name=<?= $m['name']; ?>"><button>線上訂票</button></a> </div>
         <?php
         }
         ?>
